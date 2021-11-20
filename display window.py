@@ -3,9 +3,9 @@ import PySimpleGUI as sg
 from decimal import Decimal
 
 layout = [
-    [sg.Text('Yaw:', size=8), sg.Text('value', key='yawOut')],
-    [sg.Text('Pitch:', size=8), sg.Text('value', key='pitchOut', justification=RIGHT)],
-    [sg.Text('Roll:', size=8), sg.Text('value', key='rollOut')],
+    [sg.Text('Yaw:', size=8), sg.Text('value', key='yawOut', size=7, justification=RIGHT)],
+    [sg.Text('Pitch:', size=8), sg.Text('value', key='pitchOut', size=7, justification=RIGHT)],
+    [sg.Text('Roll:', size=8), sg.Text('value', key='rollOut', size=7, justification=RIGHT)],
     [sg.Text('')],
     [sg.Text('Yaw:'), sg.Input('', key='yawIn', size=6), sg.Text('Pitch:'), sg.Input('', key='pitchIn', size=6), sg.Text('Roll:'), sg.Input('', key='rollIn', size=6)],
     [sg.Button('Update'), sg.Button('Exit')]
