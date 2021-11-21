@@ -12,3 +12,15 @@ added readSerialTread.py which sets up a thread to read output from the 8266
 
 works as intended.
 No user input required at the GUI, it simply displays the current values from the 8266 MPU6050
+
+Wiring is really simple:
+
+MPU-6050  8266-mini
+  3.3V      3.3V
+  0V        0V
+  SCL       D2(5)
+  SDA       D1(4)
+  INT       D5(14)
+
+I also have a button; one side to ground, the other to D6(GPIO-12) but I am not using it in this sketch
+I mention this for explanation as it is included in the serial output from the 8266 and read by readSerialThread.
