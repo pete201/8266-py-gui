@@ -45,10 +45,23 @@ def main():
   worker.setDaemon(True)
   worker.start()
 
-  for x in range(20):
-    print(q.get())
+  watchdog = 0
 
-  #q.join()   # do NOT do this as main will not exit since threads are still running
+  
+
+  while q.qsize() < 22: 
+    watchdog +=1
+    print('q size is ',q.qsize())
+    if watchdog > 12000: exit()
+
+
+  if q.qsize() > 20: 
+    for x in range(20):
+      print(q.get())
+    exit()
+    
+    
+    #q.join()   # do NOT do this as main will not exit since threads are still running
 
   exit()
 
