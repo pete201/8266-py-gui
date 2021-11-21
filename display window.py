@@ -2,6 +2,7 @@ from tkinter.constants import RIGHT
 import PySimpleGUI as sg
 from decimal import Decimal
 
+
 layout = [
     [sg.Text('Yaw:', size=8), sg.Text('value', key='yawOut', size=7, justification=RIGHT)],
     [sg.Text('Pitch:', size=8), sg.Text('value', key='pitchOut', size=7, justification=RIGHT)],
@@ -15,7 +16,7 @@ window = sg.Window('8266 readout', layout)
 
 
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout=500)
 
     if event in ('Exit', None): break                                   # event 'None' is passed when closing the window by clicking x
 
